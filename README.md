@@ -58,3 +58,19 @@ Get metrics from a sensor from date
 
 #### Example
     curl -X GET "http://localhost:3000/v1/metrics/openweather?from=2022-09-28" -H "accept: application/json"
+
+### Boundary Endpoints
+Get out of boundary data from a sensor from date
+    
+    curl -X GET "http://localhost:3000/v1/boundaries/conductivity?from=YYYY-MM-DD1&grade={grade}" -H "accept: application/json"
+
+####  Available boundaries:
+- conductivity
+
+####  Available grades:
+- MINOR
+- AVERAGE
+- BIG
+
+#### Example
+    curl -X GET "http://localhost:3000/v1/boundaries/conductivity?from=2022-09-15&grade=MINOR" -H "accept: application/json"

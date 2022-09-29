@@ -7,6 +7,7 @@ const scanCloriRoute = require("./scan_chlori");
 const triscanRoute = require("./triscan");
 const addvantageRoute = require("./addvantage");
 const metricsRoute = require("./metrics");
+const boundariesRoute = require("./boundaries");
 const express = require("express");
 
 const router = express.Router();
@@ -20,5 +21,6 @@ router.use("/scanchlori", scanCloriRoute);
 router.use("/triscan", triscanRoute);
 router.use("/addvantage", addvantageRoute);
 router.use("/metrics", metricsRoute);
+router.use("/boundaries", boundariesRoute);
 
 module.exports = router;

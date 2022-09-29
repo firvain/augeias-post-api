@@ -5,8 +5,11 @@ module.exports = function (req, res, next) {
   if (from && Object.keys(from).length !== 0) {
     if (!moment(from, "YYYY-MM-DD", true).isValid()) {
       res.json({ error: "Invalid date format" });
+    } else {
+      next();
     }
+  } else {
+    next();
   }
   // Implement the middleware function based on the options object
-  next();
 };
