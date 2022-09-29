@@ -9,7 +9,7 @@ Author: [xtc.codes](https://xtc.codes)
 
 Website: https://project-augeias.gr/
 
-Version: 0.1.0
+Version: 1.0.0
 
 Description: Augeias post process API
 
@@ -17,7 +17,7 @@ Tags: augeias, post process, api
 
 ## Installation
 
-    git clone
+    git clone https://github.com/firvain/augeias-post-api.git
     cd augeias-post-process-api
     yard install
 
