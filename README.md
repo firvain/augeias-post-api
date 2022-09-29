@@ -1,4 +1,4 @@
-![Project Augeias](https://project-augeias.gr/wp-content/uploads/2021/06/logo6-cut-scaled.jpg)
+![Project Augeias](./images/logo.jpg)
 
 # Augeias post process API
 (c) 2022, [xtc.codes](https://xtc.codes)
