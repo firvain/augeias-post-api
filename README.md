@@ -80,7 +80,7 @@ _Available grades for conductivity:_ MINOR, AVERAGE, MAJOR
 
     curl -X GET "http://localhost:3000/v1/boundaries/tss?from=2022-09-15" -H "accept: application/json"
 
-### Alarms Endpoints
+### Alarm Endpoints
 Get the latest alarm from a sensor
 
     curl -X GET "http://localhost:3000/v1/alarms/{sensor}" -H "accept: application/json"
