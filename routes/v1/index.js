@@ -8,6 +8,7 @@ const triscanRoute = require("./sensors/triscan");
 const addvantageRoute = require("./sensors/addvantage");
 const metricsRoute = require("./metrics");
 const boundariesRoute = require("./boundaries");
+const alertsRoute = require("./alerts");
 const express = require("express");
 
 const router = express.Router();
@@ -22,5 +23,6 @@ router.use("/triscan", triscanRoute);
 router.use("/addvantage", addvantageRoute);
 router.use("/metrics", metricsRoute);
 router.use("/boundaries", boundariesRoute);
+router.use("/alerts", alertsRoute);
 
 module.exports = router;
