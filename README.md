@@ -66,8 +66,11 @@ Get out of boundary data from a sensor from date
 
 ####  Available boundaries:
 - conductivity
+- ph
+- cod
+- bod
 
-####  Available grades:
+####  Available grades for conductivity:
 - MINOR
 - AVERAGE
 - BIG
