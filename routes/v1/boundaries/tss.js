@@ -11,7 +11,7 @@ router.route("/").get(checkDate, checkParams, (req, res) => {
   const d = pgp.as.date(moment.utc(from, "YYYY-MM-DD").toDate());
 
   db.any(
-    'select legal_proteus_infinite.timestamp as timestamp,A."BOD" as bod,legal_proteus_infinite.bod_grade from legal_proteus_infinite inner join "Proteus_infinite" A on legal_proteus_infinite.timestamp = A.timestamp where A.timestamp >= $1 order by A.timestamp',
+    "select timestamp, tss, tss_grade from legal_aquatroll where timestamp >= $1 order by timestamp",
     [d]
   )
     .then((data) => {
@@ -23,7 +23,7 @@ router.route("/").get(checkDate, checkParams, (req, res) => {
     });
 });
 router.route("/all").get((req, res) => {
-  db.any('select bod_grade from "legal_proteus_infinite"', [true])
+  db.any('select timestamp, tss, tss_grade from "legal_aquatroll"', [true])
     .then((data) => {
       res.end(JSON.stringify(data));
     })

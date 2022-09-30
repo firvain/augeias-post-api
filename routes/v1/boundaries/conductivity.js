@@ -16,7 +16,7 @@ router.route("/").get(checkDate, checkParams, (req, res) => {
 
     if (grade && grade.length !== 0) {
       db.any(
-        'select * from "legal_aquatroll" where timestamp >= $1 and conductivity_grade = $2 order by timestamp',
+        'select timestamp, conductivity,conductivity_grade from "legal_aquatroll" where timestamp >= $1 and conductivity_grade = $2 order by timestamp',
         [d, grade.toUpperCase()]
       )
         .then((data) => {
@@ -29,7 +29,7 @@ router.route("/").get(checkDate, checkParams, (req, res) => {
         });
     } else {
       db.any(
-        'select * from "legal_aquatroll" where timestamp >= $1 order by timestamp',
+        'select timestamp, conductivity,conductivity_grade from "legal_aquatroll" where timestamp >= $1 order by timestamp',
         [d]
       )
         .then((data) => {

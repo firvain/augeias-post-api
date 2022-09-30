@@ -73,7 +73,7 @@ Get out of boundary data from a sensor from date
 ####  Available grades for conductivity:
 - MINOR
 - AVERAGE
-- BIG
+- MAJOR
 
 #### Example
     curl -X GET "http://localhost:3000/v1/boundaries/conductivity?from=2022-09-15&grade=MINOR" -H "accept: application/json"

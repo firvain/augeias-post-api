@@ -11,7 +11,7 @@ router.route("/").get(checkDate, checkParams, (req, res) => {
   const d = pgp.as.date(moment.utc(from, "YYYY-MM-DD").toDate());
 
   db.any(
-    'select cod_grade from "legal_proteus_infinite" where timestamp >= $1 order by timestamp',
+    'select legal_proteus_infinite.timestamp as timestamp,A."COD" as cod,legal_proteus_infinite.cod_grade from legal_proteus_infinite inner join "Proteus_infinite" A on legal_proteus_infinite.timestamp = A.timestamp where A.timestamp >= $1 order by A.timestamp',
     [d]
   )
     .then((data) => {
