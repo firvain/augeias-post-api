@@ -66,6 +66,7 @@ Get out of boundary data from a sensor from date
 
 ####  Available boundaries:
 - conductivity
+- coli
 - ph
 - cod
 - bod
@@ -78,3 +79,17 @@ _Available grades for conductivity:_ MINOR, AVERAGE, MAJOR
     curl -X GET "http://localhost:3000/v1/boundaries/conductivity?from=2022-09-15&grade=MINOR" -H "accept: application/json"
 
     curl -X GET "http://localhost:3000/v1/boundaries/tss?from=2022-09-15" -H "accept: application/json"
+
+### Alarms Endpoints
+Get the latest alarm from a sensor
+
+    curl -X GET "http://localhost:3000/v1/alarms/{sensor}" -H "accept: application/json"
+####  Available alarms:
+- ph
+- cod
+- bod
+- tss
+- conductivity
+- coli
+#### Example
+    curl -X GET "http://localhost:3000/v1/alarms/ph" -H "accept: application/json"
