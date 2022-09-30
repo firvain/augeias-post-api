@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { db, pgp } = require("../../modules/db");
-const { checkDate, checkParams } = require("../../middlewares");
+const { db, pgp } = require("../../../modules/db");
+const { checkDate, checkParams } = require("../../../middlewares");
 const moment = require("moment-timezone");
 
 router.route("/").get(checkDate, checkParams, (req, res) => {

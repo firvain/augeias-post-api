@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { db, pgp } = require("../../modules/db");
-const { checkDate, checkParams } = require("../../middlewares");
+const { db, pgp } = require("../../../modules/db");
+const { checkDate, checkParams } = require("../../../middlewares");
 const moment = require("moment-timezone");
 
 router.route("/").get(checkDate, checkParams, (req, res) => {
@@ -12,7 +12,7 @@ router.route("/").get(checkDate, checkParams, (req, res) => {
     const d = pgp.as.date(moment.utc(from, "YYYY-MM-DD").toDate());
 
     db.any(
-      'select * from "addvantage" where timestamp >= $1 order by timestamp',
+      'select * from "openweather_addvantage_mape" where timestamp >= $1 order by timestamp',
       [d]
     )
       .then((data) => {
@@ -26,7 +26,7 @@ router.route("/").get(checkDate, checkParams, (req, res) => {
   }
 });
 router.route("/all").get((req, res) => {
-  db.any('select * from "addvantage"', [true])
+  db.any('select * from "openweather_addvantage_mape"', [true])
     .then((data) => {
       res.end(JSON.stringify(data));
     })
